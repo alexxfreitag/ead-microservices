@@ -11,4 +11,5 @@ public interface ModuleService {
     ModuleModel save(ModuleModel moduleModel);
     Optional<ModuleModel> findByIdAndCourseId(UUID courseId, UUID moduleId);
     List<ModuleModel> findAllByCourseId(UUID courseId);
+    Optional<ModuleModel> findById(UUID moduleId);
 }
