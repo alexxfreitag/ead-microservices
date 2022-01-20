@@ -33,13 +33,13 @@ public class UserController {
 
     @GetMapping
     public ResponseEntity<Page<UserModel>> getAllUsers(SpecificationTemplate.UserSpec userSpec,
-                                                       @PageableDefault(page = 0, size = 10, sort = "userId", direction = Sort.Direction.ASC)
+                                                       @PageableDefault(sort = "id", direction = Sort.Direction.ASC)
                                                                Pageable pageable) {
         Page<UserModel> userModelPage = userService.findAll(userSpec, pageable);
 
         if (!userModelPage.isEmpty()) {
             userModelPage.toList().forEach(userModel -> {
-                userModel.add(linkTo(methodOn(UserController.class).getOneUser(userModel.getUserId())).withSelfRel());
+                userModel.add(linkTo(methodOn(UserController.class).getOneUser(userModel.getId())).withSelfRel());
             });
         }
 
