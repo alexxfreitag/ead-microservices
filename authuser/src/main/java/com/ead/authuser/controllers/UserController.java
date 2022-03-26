@@ -97,7 +97,7 @@ public class UserController {
 
         userService.save(userModel);
 
-        log.debug("PUT updateUser userModel saved {} ", userModel.toString());
+        log.debug("PUT updateUser userId saved {} ", userModel.getId());
         log.info("User updated successfully userId {} ", userModel.getId());
 
         return ResponseEntity.status(HttpStatus.OK).body(userModel);
@@ -127,7 +127,7 @@ public class UserController {
 
         userService.save(userModel);
 
-        log.debug("PUT updatePassword userModel saved {} ", userModel.toString());
+        log.debug("PUT updatePassword userId saved {} ", userModel.getId());
         log.info("Password updated successfully userId {} ", userModel.getId());
 
         return ResponseEntity.status(HttpStatus.OK).body("Password updated succesfully.");
@@ -151,7 +151,7 @@ public class UserController {
 
         userService.save(userModel);
 
-        log.debug("PUT updateImage userModel saved {} ", userModel.toString());
+        log.debug("PUT updateImage userId saved {} ", userModel.getId());
         log.info("Image updated successfully userId {} ", userModel.getId());
 
         return ResponseEntity.status(HttpStatus.OK).body(userModel);
